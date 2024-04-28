@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Task</h1>
+  </body>
+  <script>
+    /////1 call back function
+    function modifyArray(arr, callback) {
+      // do something to arr here
+      arr.push(100);
+      // then execute the callback function that was passed
+      callback();
+    }
+
+    var arr = [1, 2, 3, 4, 5];
+
+    modifyArray(arr, function () {
+      console.log("array has been modified", arr);
+    });
+    console.log("------my task-1------");
+    //my turn
+    function myfun(name, callbackFun) {
+      name = "keshav";
+      console.log(name);
+      callbackFun();
+    }
+    var name;
+    function callbackFun() {
+      console.log("this is call back");
+    }
+
+    myfun(name, callbackFun);
+  </script>
+</html>

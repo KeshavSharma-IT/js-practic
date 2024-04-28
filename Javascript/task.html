@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      title="People Attending"
+      id="NumberofPeopleAttending"
+      data-ng-model="ContactObj.PersonsCount"
+      data-ui="text"
+      class="form-control"
+      onkeypress="return isNumberKey(event)"
+    />
+    <input type="text" onkeypress="return isAlphaNumeric(event)" />
+  </body>
+  <script>
+    function isAlphaNumeric(evt) {
+      var char = String.fromCharCode(evt.which);
+      if (!/[0-9-A-Z-+()]/.test(char)) {
+        evt.preventDefault();
+      }
+    }
+    function isNumberKey(evt) {
+      var char = String.fromCharCode(evt.which);
+      if (!/[0-9]/.test(char)) {
+        evt.preventDefault();
+      }
+    }
+  </script>
+</html>

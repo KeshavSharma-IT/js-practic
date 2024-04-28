@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search bar</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      id="myInput"
+      onkeyup="SearchFun()"
+      placeholder="search Name"
+    />
+
+    <table id="myTable">
+      <tr>
+        <th>Name</th>
+        <th>Degree</th>
+        <th>Profession</th>
+      </tr>
+      <tr>
+        <td>Keshav</td>
+        <td>BCA</td>
+        <td>.net developer</td>
+      </tr>
+      <tr>
+        <td>aman</td>
+        <td>MCA</td>
+        <td>MERN Developer</td>
+      </tr>
+      <tr>
+        <td>jatin</td>
+        <td>B.com</td>
+        <td>HR</td>
+      </tr>
+      <tr>
+        <td>Dhiru</td>
+        <td>MSC</td>
+        <td>Teacher</td>
+      </tr>
+    </table>
+  </body>
+</html>
+<script>
+  const SearchFun = () => {
+    let Enterval = document.getElementById("myInput").value.toUpperCase();
+    let myTable = document.getElementById("myTable");
+    let tr = myTable.getElementsByTagName("tr");
+    for (var i = 0; i < tr.length; i++) {
+      let td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        let textvalue = td.textContent || td.innerHTML;
+        if (textvalue.toUpperCase().indexOf(Enterval) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  };
+</script>
